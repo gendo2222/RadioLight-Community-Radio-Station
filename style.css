@@ -1,4 +1,67 @@
-html {
-  height: 100%;
-  width: 100%;
+/* Estilos básicos */
+body {
+  font-family: 'Segoe UI', Geneva, Verdana, sans-serif;
+  background-color: #e0f7fa;
+  color: #004d40;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  background-image: url('fondo.jpg'); /* Imagen de fondo */
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed; /* Fondo fijo */
+  height: 100vh; /* Altura completa de la ventana */
+}
+
+/* Estilos para el reproductor */
+iframe {
+  border-radius: 15px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  margin: 1rem 0;
+}
+
+/* Espaciado y estilos de título */
+h1 {
+  font-size: 3rem;
+  color: #00796b;
+  margin-bottom: 1rem;
+}
+
+h2, h4 {
+  font-size: 1.5rem;
+  color: #004d40;
+}
+
+/* Estilos para los colaboradores */
+#collaborators {
+  margin: 20px;
+}
+
+.collaborator-img {
+  width: 80px;
+  height: 80px;
+  margin: 0 10px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+/* Estilos para la imagen aleatoria */
+#random-image {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+.random-img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/* Ajustes para el fondo */
+h2, h3 {
+  margin-top: 2rem;
 }
