@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width">
   <title>RadioLight Community</title>
   <link href="style.css" rel="stylesheet" type="text/css" />
-  
+
   <!-- Favicon -->
   <link rel="icon" href="favicon.png" type="image/png">
 </head>
@@ -17,15 +17,48 @@
   <!-- Reproductor de Zeno Tools -->
   <iframe src="https://zeno.fm/player/radiolight-community" width="575" height="250" frameborder="0" scrolling="no"></iframe>
   <br><br>
-  <a href="https://zeno.fm/" target="_blank" style="display: block; font-size: 0.9em; line-height: 10px;">A Zeno.FM Station</a>
+  <h4>Este es el directo 24/7 en YouTube</h4>
+  <!-- Vista previa del directo -->
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/8QoV66LCLd0" 
+          title="YouTube Live Stream" frameborder="0" allow="accelerometer; autoplay; clipboard-write; 
+          encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+  </iframe>
 
-  <h2>Lista de canciones actuales:</h2>
-  <ul id="playlist">
-    <!-- Aquí van las canciones -->
-    <li>TUSE - cazador malvado</li>
-    <li>Adicto al SCP - La Sombra y los 3 Científicos</li>
-    <li>Volvimos - cazador malvado</li>
-    <li>Señor Netzach - cazador malvado</li>
+  <!-- Bloques de horarios y canciones -->
+  <h2>Horarios de canciones:</h2>
+
+  <!-- Bloque 1 -->
+  <h3>3:30 AM a 9:00 AM UTM - "Creppy Time"</h3>
+  <ul>
+    <li><a href="https://www.youtube.com/watch?v=Mr8iAkcRqDg&t=11s" class="block1-song">TERMINATOR - AngryCat</a></li>
+    <li><a href="https://www.youtube.com/watch?v=94bSmrUt_T8&t=54s" class="block1-song">Hay algo en los servidores de SCP SL - ArsovietPNG</a></li>
+    <li><a href="https://www.youtube.com/watch?v=Y5nRnsHzbiU" class="block1-song">Creppypasta SCP SL - ArsovietPNG</a></li>
+  </ul>
+
+  <!-- Bloque 2 -->
+  <h3>9:05 AM a 13:55 PM UTM - "Un viernes en RadioLight - FNF MOD"</h3>
+  <ul>
+    <li class="block2-song">Confronting R V2 - AngryCat</li>
+    <li class="block2-song">Double Trouble V1 - AngryCat</li>
+    <li class="block2-song">El Strike o vete V1 - AngryCat</li>
+    <li class="block2-song">ENCOUNT3R V1 - AngryCat</li>
+    <li class="block2-song">High Trouble V1 - AngryCat</li>
+    <li class="block2-song">KBOOM V1 - AngryCat</li>
+    <li class="block2-song">MIC SPAM V1 - AngryCat</li>
+    <li class="block2-song">MINIGAMES DEMO V1 - AngryCat</li>
+    <li class="block2-song">No hay otra manera V1 - AngryCat</li>
+    <li class="block2-song">VipChrome V1 - AngryCat</li>
+    <li class="block2-song">Zedrick V1 - AngryCat</li>
+  </ul>
+
+  <!-- Bloque 3 -->
+  <h3>14:00 PM a 3:25 AM UTM - "Programación General"</h3>
+  <ul>
+    <li><a href="https://youtu.be/PafNh_l4-Do" class="block3-song">TUSE - cazador malvado</a></li>
+    <li><a href="https://youtu.be/PBIgGJUVYeQ" class="block3-song">Adicto al SCP - La Sombra y los 3 Científicos</a></li>
+    <li><a href="https://youtu.be/RaaVWtHWAUk" class="block3-song">Volvimos - cazador malvado</a></li>
+    <li><a href="https://youtu.be/dytK3xeJYs8" class="block3-song">Señor Netzach - cazador malvado</a></li>
+    <li><a href="https://www.youtube.com/watch?v=_KXy_kzQmUc" class="block3-song">Alemán cantando Ballin - ArsovietPNG</a></li>
   </ul>
 
   <!-- Apartado de colaboradores -->
@@ -37,6 +70,13 @@
     <a href="https://www.youtube.com/@asesinovegeta" target="_blank">
       <img src="collaborator2.png" alt="Colaborador 2" class="collaborator-img">
     </a>
+    <!-- Nuevos colaboradores -->
+    <a href="https://www.youtube.com/@arsovietPNG" target="_blank">
+      <img src="collaborator3.png" alt="Colaborador 3" class="collaborator-img">
+    </a>
+    <a href="https://www.youtube.com/@radiolightcommunity" target="_blank">
+      <img src="collaborator4.png" alt="Colaborador 4" class="collaborator-img">
+    </a>
   </div>
 
   <!-- Logo de Discord -->
@@ -45,11 +85,32 @@
     <img src="discord.png" alt="Discord" width="50" height="50">
   </a>
 
-  <!-- Imagen aleatoria en la esquina -->
-  <div id="random-image">
-    <img src="" id="random-img" alt="Imagen aleatoria" class="random-img">
-  </div>
+  <!-- Espaciado adicional -->
+  <div style="margin-bottom: 50px;"></div>
 
-  <script src="script.js"></script>
+  <script>
+    // Cargar sonidos
+    const sound1 = new Audio('sound2.mp3'); // Sonido para Bloques 1 y 3
+    const sound2 = new Audio('sound1.mp3'); // Sonido para Bloque 2
+
+    // Configurar enlaces para abrir en nueva pestaña
+    document.querySelectorAll('a').forEach(link => {
+      link.setAttribute('target', '_blank');
+    });
+
+    // Bloques 1 y 3
+    document.querySelectorAll('.block1-song, .block3-song').forEach(item => {
+      item.addEventListener('click', event => {
+        sound1.play(); // Reproduce sonido
+      });
+    });
+
+    // Bloque 2
+    document.querySelectorAll('.block2-song').forEach(item => {
+      item.addEventListener('click', event => {
+        sound2.play(); // Reproduce sonido
+      });
+    });
+  </script>
 </body>
 </html>
